@@ -28,7 +28,7 @@ export interface AnimateItem {
 	animationTimingFunction: string;
 }
 
-export interface IBlockType {
+export interface IBlockType<T = any> {
 	id: string;
 	name: string;
 	top: number;
@@ -41,7 +41,8 @@ export interface IBlockType {
 	focus: boolean;
 	resize: boolean;
 	canDrag: boolean;
-	props: Record<string, any>;
+	// props: Record<string, any>;
+	props: T;
 	syncList: Array<string>;
 	eventMap: EventCenterMapType; //调用的event 与对应的函数名 如果要增加参数，则类型不能是Array<string>,需要[{name:string,...args}]
 	functionList: Array<string>; //抛出的函数名
