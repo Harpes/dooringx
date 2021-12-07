@@ -7,8 +7,7 @@
  *
  */
 
-import { ComponentClass } from 'react';
-import { FunctionComponent } from 'react';
+import { ComponentClass, FunctionComponent } from 'react';
 
 const modulesFiles = (require as any).context('./formComponents', true, /\.(js|tsx)$/);
 export const Formmodules: Record<string, FunctionComponent<any> | ComponentClass<any, any>> =

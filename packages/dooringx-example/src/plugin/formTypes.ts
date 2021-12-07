@@ -17,9 +17,16 @@ export interface FormAnimateControlType {}
 export interface FormSwitchType extends FormBaseType {
 	label: string;
 }
+
+export interface FormChooseType extends FormBaseType {
+	receive: string;
+	label: string;
+}
+
 export interface FormMap {
 	input: FormInputType;
 	actionButton: FormActionButtonType;
 	animateControl: FormAnimateControlType;
 	switch: FormSwitchType;
+	choose: FormChooseType;
 }

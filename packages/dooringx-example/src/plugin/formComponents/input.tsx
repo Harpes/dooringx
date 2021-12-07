@@ -5,13 +5,14 @@
  * @LastEditTime: 2021-08-05 15:27:21
  * @FilePath: \dooringx\packages\dooringx-example\src\plugin\formComponents\input.tsx
  */
-import { deepCopy, UserConfig } from 'dooringx-lib';
 import { Col, Input, Row } from 'antd';
-import { memo, useMemo } from 'react';
-import React from 'react';
-import { FormMap } from '../formTypes';
+import React, { memo, useMemo } from 'react';
+
+import { deepCopy, UserConfig } from 'dooringx-lib';
 import { CreateOptionsRes } from 'dooringx-lib/dist/core/components/formTypes';
 import { IBlockType } from 'dooringx-lib/dist/core/store/storetype';
+import { FormMap } from '../formTypes';
+import styles from './index.less';
 
 interface MInputProps {
 	data: CreateOptionsRes<FormMap, 'input'>;
@@ -25,8 +26,8 @@ function MInput(props: MInputProps) {
 	}, [props.data]);
 	const store = props.config.getStore();
 	return (
-		<Row style={{ padding: '10px 20px' }}>
-			<Col span={6} style={{ lineHeight: '30px' }}>
+		<Row className={styles['form-row']}>
+			<Col span={6} className={styles['form-column']}>
 				{option.label || '文字'}：
 			</Col>
 			<Col span={18}>
